@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Siddharth Calculator</title>
+    <link rel="stylesheet" href="calc.css">
+</head>
+<body>
+    <table border= 1>
+        <tr>
+            <td align=left colspan=4 ><input type="textbox" id='result' width='200px' value=0></td>
+        </tr>
+        
+        <tr>
+            <td id='clear'>AC</td>
+            <td id='leftp'>(</td>
+            <td id='rightp'>)</td>
+            <td id='div'>/</td>
+        </tr>
+        <tr>
+                <td id='num7'>7</td>
+                <td id='num8'>8</td>
+                <td id='num9'>9</td>
+                <td id='mult'>*</td>
+            </tr>
+            <tr>
+                    <td id='num4'>4</td>
+                    <td id='num5'>5</td>
+                    <td id='num6'>6</td>
+                    <td id='sub'>-</td>
+                </tr>
+                <tr>
+                        <td id='num1'>1</td>
+                        <td id='num2'>2</td>
+                        <td id='num3'>3</td>
+                        <td id='plus'>+</td>
+                    </tr>
+            <tr>
+                <td colspan=2 id='num0'>0</td>
+                <td id='decimal'>.</td>
+                <td id='equal'>=</td>
+            </tr>
+    </table>
+
+
+<script>
+    function printsym(e)
+    {
+        let result=document.getElementById("result");
+        let obj=e.target;
+        
+        result.value=result.value+obj.textContent; 
+        
+    }
+    
+    function printdigit(e)
+    {
+        let result=document.getElementById("result");
+        let obj=e.target;
+        if(result.value==0)
+        {
+         result.value=obj.textContent;   
+        }
+        else{
+        result.value=result.value+obj.textContent; 
+        }
+    }
+let num0= document.getElementById("num0");
+let num3 = document.getElementById('num3');
+let num2 = document.getElementById('num2');
+let num1 = document.getElementById('num1');
+let num4 = document.getElementById('num4');
+let num5 = document.getElementById('num5');
+let num6 = document.getElementById('num6');
+let num7 = document.getElementById('num7');
+let num8 = document.getElementById('num8');
+let num9 = document.getElementById('num9');
+let sub=document.getElementById("sub");
+let plus=document.getElementById("plus");
+let mult=document.getElementById("mult");
+let div=document.getElementById("div");
+let decimal=document.getElementById("decimal");
+let clear=document.getElementById("clear");
+let equal=document.getElementById("equal");
+let rightp=document.getElementById("rightp");
+let leftp=document.getElementById("leftp");
+
+
+num0.addEventListener("click", printdigit);
+num1.addEventListener("click", printdigit);
+num2.addEventListener("click", printdigit);
+num3.addEventListener("click", printdigit);
+num4.addEventListener("click", printdigit);
+num5.addEventListener("click", printdigit);
+num6.addEventListener("click", printdigit);
+num7.addEventListener("click", printdigit);
+num8.addEventListener("click", printdigit);
+num9.addEventListener("click", printdigit);
+sub.addEventListener("click", printsym);
+plus.addEventListener("click", printsym);
+div.addEventListener("click", printsym);
+mult.addEventListener("click", printsym);
+decimal.addEventListener("click", printsym);
+leftp.addEventListener("click",printsym);
+rightp.addEventListener("click", printsym)
+ 
+clear.addEventListener("click", e=> document.getElementById("result").value=0 );
+
+equal=addEventListener("click", e=> result.value=eval(result.value))
+
+
+</script>
+
+</body>
+</html>
